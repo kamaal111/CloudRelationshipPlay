@@ -9,7 +9,7 @@ import CloudKit
 import Foundation
 import KamaalExtensions
 
-struct CloudTree: Identifiable {
+struct CloudTree: Identifiable, Hashable {
     let id: UUID
     let field: CloudField
     let record: CKRecord
@@ -17,6 +17,10 @@ struct CloudTree: Identifiable {
 
 extension CloudTree: Cloudable {
     static var recordType = "CloudTree"
+
+    static func fromRecord(_ record: CKRecord) -> CloudTree? {
+        fatalError()
+    }
 }
 
 private enum RecordKeys: String, CaseIterable {

@@ -10,9 +10,11 @@ import ICloutKit
 import Foundation
 import KamaalExtensions
 
-protocol Cloudable {
+protocol Cloudable: Hashable, Identifiable {
+    var id: UUID { get }
     var record: CKRecord { get }
     static var recordType: String { get }
+    static func fromRecord(_ record: CKRecord) -> Self?
 }
 
 enum CloudableErrors: Error {
@@ -25,8 +27,7 @@ extension Cloudable {
     }
 
     static func list(from context: CloudHandler) async throws -> [CKRecord] {
-        let predicate = NSPredicate(value: true)
-        return try await filter(by: predicate, limit: nil, from: context)
+        try await context.list(ofType: recordType)
     }
 
     static func filter(by predicate: NSPredicate,

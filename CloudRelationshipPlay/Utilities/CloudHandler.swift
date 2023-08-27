@@ -38,24 +38,17 @@ class CloudHandler {
 
     private func deleteDuplicateOrDefectedRecords(_ records: [CKRecord]) async throws
         -> (deletedRecords: [CKRecord], nonDuplicatesRecords: [CKRecord]) {
-        var recordsMappedByID: [NSString: CKRecord] = [:]
+        var recordsMappedByID: [String: CKRecord] = [:]
         var recordsToDelete: [CKRecord] = []
         records.forEach { item in
-            assert(item["id"] as? NSString != nil)
-            if let id = item["id"] as? NSString {
-                if let recordToDelete = recordsMappedByID[id] {
-                    recordsToDelete = recordsToDelete.appended(recordToDelete)
-                } else {
-                    recordsMappedByID[id] = item
-                }
-                return
+            if let recordToDelete = recordsMappedByID[item.recordID.recordName] {
+                recordsToDelete = recordsToDelete.appended(recordToDelete)
+            } else {
+                recordsMappedByID[item.recordID.recordName] = item
             }
-
-            recordsToDelete = recordsToDelete.appended(item)
         }
 
         let deletedItems = try await batchDelete(recordsToDelete)
-
         return (deletedItems, recordsMappedByID.values.asArray())
     }
 

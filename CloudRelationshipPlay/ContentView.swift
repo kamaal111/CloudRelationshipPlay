@@ -6,13 +6,19 @@
 //
 
 import SwiftUI
+import KamaalUI
 
 struct ContentView: View {
     @Environment(FieldsManager.self) private var fieldsManager
 
     var body: some View {
-        VStack {
-            Text("Hello there!")
+        KScrollableForm {
+            Button(action: { Task { await fieldsManager.createField() } }) {
+                Text("Create field")
+            }
+            ForEach(fieldsManager.fields) { field in
+                Text(field.id.uuidString)
+            }
         }
         .padding()
         .onAppear(perform: {

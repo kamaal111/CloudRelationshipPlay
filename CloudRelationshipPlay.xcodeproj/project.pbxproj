@@ -18,6 +18,7 @@
 		2CEEFF8E2A992A10000647FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEFF8D2A992A10000647FB /* ContentView.swift */; };
 		2CEEFF902A992A12000647FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CEEFF8F2A992A12000647FB /* Assets.xcassets */; };
 		2CEEFF932A992A12000647FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CEEFF922A992A12000647FB /* Preview Assets.xcassets */; };
+		2CFD37172A9BEFA000DC23A9 /* KamaalUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2CFD37162A9BEFA000DC23A9 /* KamaalUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CFD37172A9BEFA000DC23A9 /* KamaalUI in Frameworks */,
 				2CABA6BB2A9A45DA006384D8 /* KamaalExtensions in Frameworks */,
 				2CABA6BE2A9A5B82006384D8 /* ICloutKit in Frameworks */,
 			);
@@ -85,6 +87,7 @@
 			children = (
 				2CEEFF8A2A992A10000647FB /* CloudRelationshipPlay */,
 				2CEEFF892A992A10000647FB /* Products */,
+				2CFD37152A9BEFA000DC23A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +123,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		2CFD37152A9BEFA000DC23A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +149,7 @@
 			packageProductDependencies = (
 				2CABA6BA2A9A45DA006384D8 /* KamaalExtensions */,
 				2CABA6BD2A9A5B82006384D8 /* ICloutKit */,
+				2CFD37162A9BEFA000DC23A9 /* KamaalUI */,
 			);
 			productName = CloudRelationshipPlay;
 			productReference = 2CEEFF882A992A10000647FB /* CloudRelationshipPlay.app */;
@@ -435,6 +446,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2CABA6BC2A9A5B82006384D8 /* XCRemoteSwiftPackageReference "ICloutKit" */;
 			productName = ICloutKit;
+		};
+		2CFD37162A9BEFA000DC23A9 /* KamaalUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CABA6B12A9A45DA006384D8 /* XCRemoteSwiftPackageReference "KamaalSwift" */;
+			productName = KamaalUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
