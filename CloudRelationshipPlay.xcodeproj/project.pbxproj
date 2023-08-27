@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C41402F2A9BE0AF00562241 /* FieldsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C41402E2A9BE0AF00562241 /* FieldsManager.swift */; };
+		2CABA6AB2A9A3B34006384D8 /* CloudField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABA6AA2A9A3B34006384D8 /* CloudField.swift */; };
+		2CABA6AD2A9A4479006384D8 /* CloudTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABA6AC2A9A4479006384D8 /* CloudTree.swift */; };
+		2CABA6B02A9A44FB006384D8 /* Cloudable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABA6AF2A9A44FB006384D8 /* Cloudable.swift */; };
+		2CABA6BB2A9A45DA006384D8 /* KamaalExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 2CABA6BA2A9A45DA006384D8 /* KamaalExtensions */; };
+		2CABA6BE2A9A5B82006384D8 /* ICloutKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2CABA6BD2A9A5B82006384D8 /* ICloutKit */; };
+		2CABA6C12A9A5D5F006384D8 /* CloudHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABA6C02A9A5D5F006384D8 /* CloudHandler.swift */; };
+		2CEEFF8C2A992A10000647FB /* CloudRelationshipPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEFF8B2A992A10000647FB /* CloudRelationshipPlayApp.swift */; };
+		2CEEFF8E2A992A10000647FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEFF8D2A992A10000647FB /* ContentView.swift */; };
+		2CEEFF902A992A12000647FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CEEFF8F2A992A12000647FB /* Assets.xcassets */; };
+		2CEEFF932A992A12000647FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CEEFF922A992A12000647FB /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C41402E2A9BE0AF00562241 /* FieldsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsManager.swift; sourceTree = "<group>"; };
+		2CABA6AA2A9A3B34006384D8 /* CloudField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudField.swift; sourceTree = "<group>"; };
+		2CABA6AC2A9A4479006384D8 /* CloudTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTree.swift; sourceTree = "<group>"; };
+		2CABA6AF2A9A44FB006384D8 /* Cloudable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloudable.swift; sourceTree = "<group>"; };
+		2CABA6C02A9A5D5F006384D8 /* CloudHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudHandler.swift; sourceTree = "<group>"; };
+		2CEEFF882A992A10000647FB /* CloudRelationshipPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudRelationshipPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CEEFF8B2A992A10000647FB /* CloudRelationshipPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudRelationshipPlayApp.swift; sourceTree = "<group>"; };
+		2CEEFF8D2A992A10000647FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2CEEFF8F2A992A12000647FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2CEEFF922A992A12000647FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2CEEFF942A992A12000647FB /* CloudRelationshipPlay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudRelationshipPlay.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2CEEFF852A992A10000647FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CABA6BB2A9A45DA006384D8 /* KamaalExtensions in Frameworks */,
+				2CABA6BE2A9A5B82006384D8 /* ICloutKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C41402D2A9BE0A000562241 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2C41402E2A9BE0AF00562241 /* FieldsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		2CABA6A92A9A3B20006384D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2CABA6AA2A9A3B34006384D8 /* CloudField.swift */,
+				2CABA6AC2A9A4479006384D8 /* CloudTree.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2CABA6AE2A9A44E5006384D8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2CABA6AF2A9A44FB006384D8 /* Cloudable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2CABA6BF2A9A5D49006384D8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2CABA6C02A9A5D5F006384D8 /* CloudHandler.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2CEEFF7F2A992A10000647FB = {
+			isa = PBXGroup;
+			children = (
+				2CEEFF8A2A992A10000647FB /* CloudRelationshipPlay */,
+				2CEEFF892A992A10000647FB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2CEEFF892A992A10000647FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CEEFF882A992A10000647FB /* CloudRelationshipPlay.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CEEFF8A2A992A10000647FB /* CloudRelationshipPlay */ = {
+			isa = PBXGroup;
+			children = (
+				2CEEFF942A992A12000647FB /* CloudRelationshipPlay.entitlements */,
+				2CEEFF8B2A992A10000647FB /* CloudRelationshipPlayApp.swift */,
+				2CEEFF8D2A992A10000647FB /* ContentView.swift */,
+				2CEEFF8F2A992A12000647FB /* Assets.xcassets */,
+				2C41402D2A9BE0A000562241 /* Managers */,
+				2CABA6A92A9A3B20006384D8 /* Models */,
+				2CEEFF912A992A12000647FB /* Preview Content */,
+				2CABA6AE2A9A44E5006384D8 /* Protocols */,
+				2CABA6BF2A9A5D49006384D8 /* Utilities */,
+			);
+			path = CloudRelationshipPlay;
+			sourceTree = "<group>";
+		};
+		2CEEFF912A992A12000647FB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2CEEFF922A992A12000647FB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2CEEFF872A992A10000647FB /* CloudRelationshipPlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CEEFF972A992A12000647FB /* Build configuration list for PBXNativeTarget "CloudRelationshipPlay" */;
+			buildPhases = (
+				2CEEFF842A992A10000647FB /* Sources */,
+				2CEEFF852A992A10000647FB /* Frameworks */,
+				2CEEFF862A992A10000647FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CloudRelationshipPlay;
+			packageProductDependencies = (
+				2CABA6BA2A9A45DA006384D8 /* KamaalExtensions */,
+				2CABA6BD2A9A5B82006384D8 /* ICloutKit */,
+			);
+			productName = CloudRelationshipPlay;
+			productReference = 2CEEFF882A992A10000647FB /* CloudRelationshipPlay.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2CEEFF802A992A10000647FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					2CEEFF872A992A10000647FB = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 2CEEFF832A992A10000647FB /* Build configuration list for PBXProject "CloudRelationshipPlay" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2CEEFF7F2A992A10000647FB;
+			packageReferences = (
+				2CABA6B12A9A45DA006384D8 /* XCRemoteSwiftPackageReference "KamaalSwift" */,
+				2CABA6BC2A9A5B82006384D8 /* XCRemoteSwiftPackageReference "ICloutKit" */,
+			);
+			productRefGroup = 2CEEFF892A992A10000647FB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2CEEFF872A992A10000647FB /* CloudRelationshipPlay */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2CEEFF862A992A10000647FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CEEFF932A992A12000647FB /* Preview Assets.xcassets in Resources */,
+				2CEEFF902A992A12000647FB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2CEEFF842A992A10000647FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CABA6AB2A9A3B34006384D8 /* CloudField.swift in Sources */,
+				2CABA6AD2A9A4479006384D8 /* CloudTree.swift in Sources */,
+				2CABA6B02A9A44FB006384D8 /* Cloudable.swift in Sources */,
+				2CEEFF8E2A992A10000647FB /* ContentView.swift in Sources */,
+				2C41402F2A9BE0AF00562241 /* FieldsManager.swift in Sources */,
+				2CABA6C12A9A5D5F006384D8 /* CloudHandler.swift in Sources */,
+				2CEEFF8C2A992A10000647FB /* CloudRelationshipPlayApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2CEEFF952A992A12000647FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2CEEFF962A992A12000647FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		2CEEFF982A992A12000647FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CloudRelationshipPlay/CloudRelationshipPlay.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CloudRelationshipPlay/Preview Content\"";
+				DEVELOPMENT_TEAM = DXUKH9VF73;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.kamaal.CloudRelationshipPlay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2CEEFF992A992A12000647FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CloudRelationshipPlay/CloudRelationshipPlay.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CloudRelationshipPlay/Preview Content\"";
+				DEVELOPMENT_TEAM = DXUKH9VF73;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.kamaal.CloudRelationshipPlay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2CEEFF832A992A10000647FB /* Build configuration list for PBXProject "CloudRelationshipPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CEEFF952A992A12000647FB /* Debug */,
+				2CEEFF962A992A12000647FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CEEFF972A992A12000647FB /* Build configuration list for PBXNativeTarget "CloudRelationshipPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CEEFF982A992A12000647FB /* Debug */,
+				2CEEFF992A992A12000647FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2CABA6B12A9A45DA006384D8 /* XCRemoteSwiftPackageReference "KamaalSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kamaalio/KamaalSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
+		2CABA6BC2A9A5B82006384D8 /* XCRemoteSwiftPackageReference "ICloutKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kamaal111/ICloutKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2CABA6BA2A9A45DA006384D8 /* KamaalExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CABA6B12A9A45DA006384D8 /* XCRemoteSwiftPackageReference "KamaalSwift" */;
+			productName = KamaalExtensions;
+		};
+		2CABA6BD2A9A5B82006384D8 /* ICloutKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CABA6BC2A9A5B82006384D8 /* XCRemoteSwiftPackageReference "ICloutKit" */;
+			productName = ICloutKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 2CEEFF802A992A10000647FB /* Project object */;
+}
