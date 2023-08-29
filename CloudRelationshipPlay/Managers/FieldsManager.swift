@@ -13,6 +13,7 @@ import KamaalExtensions
 @Observable
 final class FieldsManager {
     var fields: [CloudField] = []
+    var loading = false
 
     enum Errors: Error {
         case creationFailure(context: Error)
@@ -20,32 +21,47 @@ final class FieldsManager {
     }
 
     func createField() async -> Result<Void, Errors> {
-        let field: CloudField
-        do {
-            field = try await CloudField.createRecord()
-        } catch {
-            return .failure(.creationFailure(context: error))
-        }
+        await withLoading {
+            let field: CloudField
+            do {
+                field = try await CloudField.createRecord()
+            } catch {
+                return .failure(.creationFailure(context: error))
+            }
 
-        await setFields(fields.appended(field))
-        return .success(())
+            await setFields(fields.appended(field))
+            return .success(())
+        }
     }
 
     func fetchFields() async -> Result<Void, Errors> {
-        let fieldRecords: [CKRecord]
-        do {
-            fieldRecords = try await CloudField.list(from: .shared)
-        } catch {
-            return .failure(.fetchFailure(context: error))
-        }
+        await withLoading {
+            let fieldRecords: [CKRecord]
+            do {
+                fieldRecords = try await CloudField.list(from: .shared)
+            } catch {
+                return .failure(.fetchFailure(context: error))
+            }
 
-        await setFields(fieldRecords.map({ record in CloudField.fromRecord(record)! }))
-        return .success(())
+            await setFields(fieldRecords.map({ record in CloudField.fromRecord(record)! }))
+            return .success(())
+        }
     }
 
     @MainActor
     private func setFields(_ fields: [CloudField]) {
-        print("fields", fields)
         self.fields = fields
+    }
+
+    @MainActor
+    private func setLoading(_ state: Bool) {
+        self.loading = state
+    }
+
+    private func withLoading<T>(_ completion: () async -> T) async -> T {
+        await setLoading(true)
+        let result = await completion()
+        await setLoading(false)
+        return result
     }
 }

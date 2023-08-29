@@ -10,9 +10,12 @@ import Foundation
 import KamaalExtensions
 
 struct CloudField: Identifiable, Hashable {
-    let id: UUID
     let record: CKRecord
     let trees: [CloudTree]
+
+    var id: UUID {
+        UUID(uuidString: record.recordID.recordName)!
+    }
 
     static func createRecord() async throws -> CloudField {
         let id = UUID()
@@ -25,7 +28,7 @@ struct CloudField: Identifiable, Hashable {
         })
         let createdRecord = try await create(record, on: .shared)
 
-        return CloudField(id: id, record: createdRecord, trees: [])
+        return CloudField(record: createdRecord, trees: [])
     }
 }
 
@@ -33,9 +36,7 @@ extension CloudField: Cloudable {
     static var recordType = "CloudField"
 
     static func fromRecord(_ record: CKRecord) -> CloudField? {
-        let id = UUID(uuidString: record.recordID.recordName)!
-
-        return CloudField(id: id, record: record, trees: [])
+        return CloudField(record: record, trees: [])
     }
 }
 

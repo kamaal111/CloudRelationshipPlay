@@ -10,9 +10,12 @@ import Foundation
 import KamaalExtensions
 
 struct CloudTree: Identifiable, Hashable {
-    let id: UUID
     let field: CloudField
     let record: CKRecord
+
+    var id: UUID {
+        UUID(uuidString: record.recordID.recordName)!
+    }
 }
 
 extension CloudTree: Cloudable {

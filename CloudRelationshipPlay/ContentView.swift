@@ -16,6 +16,10 @@ struct ContentView: View {
             Button(action: { Task { await fieldsManager.createField() } }) {
                 Text("Create field")
             }
+            .disabled(fieldsManager.loading)
+            if fieldsManager.loading {
+                KLoading()
+            }
             ForEach(fieldsManager.fields) { field in
                 Text(field.id.uuidString)
             }
