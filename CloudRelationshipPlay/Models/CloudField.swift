@@ -18,11 +18,9 @@ struct CloudField: Identifiable, Hashable {
     }
 
     static func createRecord() async throws -> CloudField {
-        let id = UUID()
         let record = RecordKeys.allCases.reduce(CKRecord(recordType: recordType), { result, key in
             switch key {
-            case .id: result[key] = id
-            case .trees: break
+            case .id, .trees: break
             }
             return result
         })
@@ -36,7 +34,7 @@ extension CloudField: Cloudable {
     static var recordType = "CloudField"
 
     static func fromRecord(_ record: CKRecord) -> CloudField? {
-        return CloudField(record: record, trees: [])
+        CloudField(record: record, trees: [])
     }
 }
 

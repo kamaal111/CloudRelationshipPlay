@@ -15,36 +15,28 @@ final class FieldsManager {
     var fields: [CloudField] = []
     var loading = false
 
-    enum Errors: Error {
-        case creationFailure(context: Error)
-        case fetchFailure(context: Error)
-    }
-
-    func createField() async -> Result<Void, Errors> {
+    func createTree(on field: CloudField) async {
         await withLoading {
-            let field: CloudField
-            do {
-                field = try await CloudField.createRecord()
-            } catch {
-                return .failure(.creationFailure(context: error))
-            }
-
-            await setFields(fields.appended(field))
-            return .success(())
+            let tree = try! await CloudTree.createRecord(on: field)
+            let updatedTree = CloudField(record: field.record, trees: field.trees.prepended(tree))
+            let fieldIndex = fields.findIndex(by: \.id, is: field.id)!
+            var newFields = fields
+            newFields[fieldIndex] = updatedTree
+            await setFields(newFields)
         }
     }
 
-    func fetchFields() async -> Result<Void, Errors> {
+    func createField() async {
         await withLoading {
-            let fieldRecords: [CKRecord]
-            do {
-                fieldRecords = try await CloudField.list(from: .shared)
-            } catch {
-                return .failure(.fetchFailure(context: error))
-            }
+            let field = try! await CloudField.createRecord()
+            await setFields(fields.prepended(field))
+        }
+    }
 
-            await setFields(fieldRecords.map({ record in CloudField.fromRecord(record)! }))
-            return .success(())
+    func fetchFields() async {
+        await withLoading {
+            let records = try! await CloudField.list(from: .shared)
+            await setFields(records.map({ record in CloudField.fromRecord(record)! }))
         }
     }
 

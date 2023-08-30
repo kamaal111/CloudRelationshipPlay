@@ -21,7 +21,22 @@ struct ContentView: View {
                 KLoading()
             }
             ForEach(fieldsManager.fields) { field in
-                Text(field.id.uuidString)
+                ZStack {
+                    Color.accentColor
+                    HStack {
+                        Text(field.id.uuidString)
+                        VStack {
+                            Button(action: { Task { await fieldsManager.createTree(on: field) } }) {
+                                Text("Create tree")
+                            }
+                            .disabled(fieldsManager.loading)
+                            ForEach(field.trees) { tree in
+                                Text(tree.id.uuidString)
+                            }
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity)
             }
         }
         .padding()
