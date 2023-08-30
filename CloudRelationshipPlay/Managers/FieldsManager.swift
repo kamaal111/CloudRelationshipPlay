@@ -35,8 +35,8 @@ final class FieldsManager {
 
     func fetchFields() async {
         await withLoading {
-            let records = try! await CloudField.list(from: .shared)
-            await setFields(records.map({ record in CloudField.fromRecord(record)! }))
+            let fields = try! await CloudField.listRecords()
+            await setFields(fields)
         }
     }
 

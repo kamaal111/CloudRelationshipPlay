@@ -13,15 +13,11 @@ struct CloudTree: Identifiable, Hashable {
     let field: CloudField
     let record: CKRecord
 
-    var id: UUID {
-        UUID(uuidString: record.recordID.recordName)!
-    }
-
     static func createRecord(on field: CloudField) async throws -> CloudTree {
         let record = RecordKeys.allCases.reduce(CKRecord(recordType: recordType), { result, key in
             switch key {
             case .id: break
-            case .field: result[key] = CKRecord.Reference(record: field.record, action: .deleteSelf)
+            case .field: result[key] = field.reference
             }
             return result
         })

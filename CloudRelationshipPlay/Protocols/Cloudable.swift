@@ -22,6 +22,10 @@ enum CloudableErrors: Error {
 }
 
 extension Cloudable {
+    var id: UUID {
+        UUID(uuidString: record.recordID.recordName)!
+    }
+
     static func create(_ record: CKRecord, on context: CloudHandler) async throws -> CKRecord {
         try await context.create(record)
     }

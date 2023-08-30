@@ -13,8 +13,8 @@ struct CloudField: Identifiable, Hashable {
     let record: CKRecord
     let trees: [CloudTree]
 
-    var id: UUID {
-        UUID(uuidString: record.recordID.recordName)!
+    var reference: CKRecord.Reference {
+        CKRecord.Reference(record: record, action: .deleteSelf)
     }
 
     static func createRecord() async throws -> CloudField {
@@ -27,6 +27,26 @@ struct CloudField: Identifiable, Hashable {
         let createdRecord = try await create(record, on: .shared)
 
         return CloudField(record: createdRecord, trees: [])
+    }
+
+    static func listRecords() async throws -> [CloudField] {
+        let cloudHandler: CloudHandler = .shared
+        let records = try! await CloudField.list(from: cloudHandler)
+        let fields = records.map({ record in CloudField.fromRecord(record)! })
+        let references = fields.map(\.reference)
+        let treesPredicate = NSPredicate(format: "field in %@", references)
+        let treeRecords = try! await CloudTree.filter(by: treesPredicate, from: cloudHandler)
+        let treeRecordsMappedByFieldID = Dictionary(grouping: treeRecords, by: { record in
+            let reference = record["field"] as! CKRecord.Reference
+            let field = fields.find(by: \.reference, is: reference)!
+            return field.id
+        })
+        return fields
+            .map({ field in
+                let trees = treeRecordsMappedByFieldID[field.id]?
+                    .map({ record in CloudTree(field: field, record: record) }) ?? []
+                return CloudField(record: field.record, trees: trees)
+            })
     }
 }
 
